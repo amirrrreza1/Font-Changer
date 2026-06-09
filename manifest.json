@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini & NotebookLM Font Splitter",
+  "version": "1.0",
+  "description": "Applies separate local and custom fonts to English and Persian text.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://gemini.google.com/*",
+        "*://notebooklm.google.com/*",
+        "*://chatgpt.com/*",
+        "*://claude.ai/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/*"],
+      "matches": [
+        "*://gemini.google.com/*",
+        "*://notebooklm.google.com/*",
+        "*://chatgpt.com/*",
+        "*://claude.ai/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "font-splitter@localextension.com"
+    }
+  }
+}
