@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.getElementById("reset-btn");
   const statusDiv = document.getElementById("status");
 
-  const defaultEnFont = "default";
+  const defaultEnFont = "RobotoCondensed.ttf";
   const defaultFaFont = "Shabnam.ttf";
 
   chrome.storage.sync.get(["enFont", "faFont"], (data) => {
