@@ -19,7 +19,7 @@ function applyFonts(enFont, faFont) {
   const faSrc = getFontSrc(faFont);
 
   if (!enSrc && !faSrc) {
-    style.innerHTML = "";
+    style.textContent = "";
     return;
   }
 
@@ -45,16 +45,16 @@ function applyFonts(enFont, faFont) {
     `;
   }
 
-  let siteDefaultFont = getComputedStyle(document.body).fontFamily;
-  siteDefaultFont = siteDefaultFont.replace(/"?SplitExtensionFont"?,?\s*/g, "");
+  const nativeFallbackStack =
+    "'Google Sans', 'Google Sans Text', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif";
 
   css += `
     *:not(.material-symbols-outlined):not(.google-symbols):not(mat-icon):not([class*="icon"]) {
-      font-family: 'SplitExtensionFont', ${siteDefaultFont} !important;
+      font-family: 'SplitExtensionFont', ${nativeFallbackStack} !important;
     }
   `;
 
-  style.innerHTML = css;
+  style.textContent = css;
 }
 
 chrome.storage.sync.get(["enFont", "faFont"], (data) => {
