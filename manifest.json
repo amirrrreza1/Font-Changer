@@ -21,7 +21,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["fonts/*"],
+      "resources": ["fonts/*", "Images/*"],
       "matches": [
         "*://gemini.google.com/*",
         "*://notebooklm.google.com/*",
@@ -32,7 +32,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "font-splitter-v2@localextension.com",
+      "id": "font-splitter-v2@prod.com",
       "data_collection_permissions": {
         "required": ["none"]
       }

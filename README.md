@@ -103,3 +103,11 @@ Because you changed the manifest.json file, the browser needs to read it again:
 1.  Go to your browser's extension page (chrome://extensions/ or edge://extensions/ or about:debugging in Firefox).
 2.  Find your extension and click the **Reload** icon (the circular arrow).
 3.  Go to the new website you added and refresh the page. Your custom fonts will now be applied there as well!
+
+## 5. Toggle RTL Direction
+
+The extension now includes a convenient floating button on supported pages (like ChatGPT, Claude, and Gemini) that allows you to instantly switch the chat layout to Right-To-Left (RTL) for a better reading experience with Arabic and Persian texts.
+
+- **Floating Button:** Look for the square button with a swap icon (`⇄`) on the right side of the screen.
+- **Hover to Expand:** Hovering over the button expands it, displaying "Toggle RTL" (or "Toggle LTR").
+- **Click to Toggle:** Click the button to switch the entire page and chat layout direction. Click it again to revert to the default Left-To-Right (LTR) layout.
