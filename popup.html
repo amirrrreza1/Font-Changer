@@ -132,7 +132,6 @@
             font-size: 12px;
             font-weight: 500;
             color: #34d399;
-            /* Mint green */
             text-align: center;
             display: none;
             background: rgba(52, 211, 153, 0.1);
@@ -145,7 +144,7 @@
 </head>
 
 <body>
-    <h3>Font Splitter</h3>
+    <h3>Persian Support</h3>
 
     <div class="input-group">
         <label for="en-font">English Font</label>
@@ -168,10 +167,32 @@
         </select>
     </div>
 
+    <div class="input-group" style="display: flex; align-items: center; margin-top: 16px; margin-bottom: 8px;">
+        <input type="checkbox" id="show-toggle" checked style="margin: 0 8px 0 0; width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer;">
+        <label for="show-toggle" style="margin: 0; cursor: pointer; text-transform: none; font-size: 13px; color: var(--text-main);">Show floating RTL toggle button</label>
+    </div>
+
     <div class="button-group">
         <button id="reset-btn">Reset</button>
         <button id="save-btn">Save & Apply</button>
     </div>
+
+    <div id="unconfigured-alert" style="display: none; margin-top: 16px; padding: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 12px; text-align: center;">
+        <div style="font-size: 12px; margin-bottom: 8px; color: var(--text-main);">Persian Support is inactive here</div>
+        <button id="quick-add-btn" style="width: 100%; padding: 8px; font-size: 12px; font-weight: 600; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: var(--primary-glow); transition: all 0.2s ease;">Enable on this site</button>
+    </div>
+
+    <button id="toggle-manage-btn" style="width: 100%; margin-top: 16px; background: transparent; border: 1px solid var(--glass-border); color: var(--text-main); font-size: 12px; padding: 8px; border-radius: 8px; cursor: pointer;">Manage Websites ▾</button>
+
+    <div id="manage-sites-section" style="display: none; margin-top: 12px; border-top: 1px solid var(--glass-border); padding-top: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div id="current-hostname" style="font-size: 11px; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 140px;">Loading...</div>
+            <button id="add-current-btn" style="width: auto; padding: 4px 12px; font-size: 11px; background: var(--primary); color: white; border: none; border-radius: 6px; cursor: pointer;">Add Site</button>
+        </div>
+        <div id="domain-list" style="max-height: 110px; overflow-y: auto; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 8px; padding: 4px; font-size: 12px; display: flex; flex-direction: column; gap: 4px;">
+        </div>
+    </div>
+
     <div id="status">Saved!</div>
 
     <script src="popup.js"></script>

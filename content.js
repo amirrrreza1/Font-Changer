@@ -57,17 +57,43 @@ function applyFonts(enFont, faFont) {
   style.textContent = css;
 }
 
-chrome.storage.sync.get(["enFont", "faFont"], (data) => {
-  applyFonts(data.enFont || "default", data.faFont || "default");
-});
+const initExtension = () => {
+  chrome.storage.sync.get(["customDomains"], (data) => {
+    const currentHostname = window.location.hostname;
+    const customDomains = data.customDomains || [];
+    
+    if (!customDomains.includes(currentHostname)) return;
 
-chrome.storage.onChanged.addListener((changes, namespace) => {
-  if (namespace === "sync") {
-    chrome.storage.sync.get(["enFont", "faFont"], (data) => {
-      applyFonts(data.enFont || "default", data.faFont || "default");
+    chrome.storage.sync.get(["enFont", "faFont", "showToggle"], (fontData) => {
+      applyFonts(fontData.enFont || "default", fontData.faFont || "default");
+      const showToggle = fontData.showToggle !== undefined ? fontData.showToggle : true;
+      if (showToggle) {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', injectDirectionToggle);
+        } else {
+          injectDirectionToggle();
+        }
+      }
     });
-  }
-});
+
+    chrome.storage.onChanged.addListener((changes, namespace) => {
+      if (namespace === "sync") {
+        chrome.storage.sync.get(["enFont", "faFont", "showToggle"], (fontData) => {
+          applyFonts(fontData.enFont || "default", fontData.faFont || "default");
+          const showToggle = fontData.showToggle !== undefined ? fontData.showToggle : true;
+          if (showToggle) {
+            injectDirectionToggle();
+          } else {
+            const toggleEl = document.getElementById("font-splitter-dir-toggle");
+            if (toggleEl) toggleEl.remove();
+          }
+        });
+      }
+    });
+  });
+};
+
+initExtension();
 
 function injectDirectionToggle() {
   if (document.getElementById("font-splitter-dir-toggle")) return;
@@ -150,7 +176,6 @@ function injectDirectionToggle() {
       transition-delay: 0s !important;
     }
     
-    /* Global classes applied when toggled */
     body.font-splitter-is-rtl .prose,
     body.font-splitter-is-rtl .font-claude-message,
     body.font-splitter-is-rtl message-content,
@@ -207,8 +232,4 @@ function injectDirectionToggle() {
   document.body.appendChild(container);
 }
 
-if (document.body) {
-  injectDirectionToggle();
-} else {
-  document.addEventListener('DOMContentLoaded', injectDirectionToggle);
-}
+

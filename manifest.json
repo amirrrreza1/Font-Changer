@@ -1,20 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Font Splitter",
+  "name": "Persian Support",
   "version": "1.0",
   "description": "Applies separate local and custom fonts to English and Persian text.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "activeTab", "tabs"],
+  "icons": {
+    "16": "Images/icon128.png",
+    "48": "Images/icon128.png",
+    "128": "Images/icon128.png"
+  },
   "action": {
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://gemini.google.com/*",
-        "*://notebooklm.google.com/*",
-        "*://chatgpt.com/*",
-        "*://claude.ai/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": ["content.js"],
       "run_at": "document_end"
     }
@@ -22,12 +22,7 @@
   "web_accessible_resources": [
     {
       "resources": ["fonts/*", "Images/*"],
-      "matches": [
-        "*://gemini.google.com/*",
-        "*://notebooklm.google.com/*",
-        "*://chatgpt.com/*",
-        "*://claude.ai/*"
-      ]
+      "matches": ["<all_urls>"]
     }
   ],
   "browser_specific_settings": {

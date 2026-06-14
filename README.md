@@ -1,4 +1,4 @@
-# Font Splitter Extension Guide
+# Persian Support Extension Guide
 
 This guide explains how to install your custom font-splitting extension across different browsers, how to add your own custom font files to it, how to make the extension permanent in Firefox, and how to apply it to other websites.
 
@@ -43,7 +43,7 @@ Copy your custom font files into fonts folder.
 Whenever you add or remove files inside your extension folder, you must tell the browser to reload it.
 
 1.  Go back to your browser's extension page (chrome://extensions/ or edge://extensions/).
-2.  Find your "Font Splitter" extension.
+2.  Find your "Persian Support" extension.
 3.  Click the **Reload icon** (a circular arrow).
 
 ### Step 3: Apply the Fonts
@@ -84,30 +84,27 @@ You must zip the _contents_ of your folder, not the outer folder itself.
 
 Your custom font extension is now permanently installed in Firefox and will survive browser restarts!
 
-## 4\. How to Apply to Other Websites
+## 4. How to Apply to Other Websites
 
-You can easily make this extension work on any other website (like ChatGPT, Claude, or any specific blog) by updating just one file: manifest.json.
+You can now easily enable this extension on ANY website you want without touching any code! The extension is completely Opt-In, meaning it is disabled everywhere by default.
 
-### Step 1: Open manifest.json
+### Step 1: Navigate to the Website
+Open the website where you want to apply your custom fonts and RTL layout (for example, `chatgpt.com`, `twitter.com`, or your favorite blog).
 
-Open your manifest.json file in any text editor. Look for the "matches" lists under "content_scripts" and "web_accessible_resources".
+### Step 2: Open the Extension Popup
+Click the **Persian Support** icon in your browser toolbar to open the popup menu.
 
-### Step 2: Add the New Websites
+### Step 3: Enable the Extension
+1. At the bottom of the popup, click **Manage Websites ▾** to expand the website management section.
+2. You will see your current website listed. Click the **Add Site** button next to it.
+3. The page will instantly reload, and your custom fonts and the floating RTL toggle button will appear! 
 
-Add the URLs of the new websites to both lists. Make sure to use the wildcard format \*://\*.website.com/\* so it applies to all pages on that site. Don't forget the commas between each line!
-
-### Step 3: Reload the Extension
-
-Because you changed the manifest.json file, the browser needs to read it again:
-
-1.  Go to your browser's extension page (chrome://extensions/ or edge://extensions/ or about:debugging in Firefox).
-2.  Find your extension and click the **Reload** icon (the circular arrow).
-3.  Go to the new website you added and refresh the page. Your custom fonts will now be applied there as well!
+You can disable it at any time by returning to the popup, expanding the **Manage Websites** section, and clicking the ❌ button next to the website you want to remove.
 
 ## 5. Toggle RTL Direction
 
-The extension now includes a convenient floating button on supported pages (like ChatGPT, Claude, and Gemini) that allows you to instantly switch the chat layout to Right-To-Left (RTL) for a better reading experience with Arabic and Persian texts.
+The extension includes a convenient floating button on enabled pages that allows you to instantly switch the chat layout to Right-To-Left (RTL) for a better reading experience with Arabic and Persian texts.
 
-- **Floating Button:** Look for the square button with a swap icon (`⇄`) on the right side of the screen.
+- **Floating Button:** Look for the square button with a swap icon on the right side of the screen.
 - **Hover to Expand:** Hovering over the button expands it, displaying "Toggle RTL" (or "Toggle LTR").
 - **Click to Toggle:** Click the button to switch the entire page and chat layout direction. Click it again to revert to the default Left-To-Right (LTR) layout.
