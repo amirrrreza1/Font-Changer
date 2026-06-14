@@ -131,7 +131,6 @@ function injectDirectionToggle() {
       white-space: nowrap;
       padding-right: 12px;
       font-size: 14px;
-      font-weight: 600;
       opacity: 0;
       transition: opacity 0.2s ease;
       transition-delay: 0.1s;
