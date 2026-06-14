@@ -5,9 +5,9 @@
   "description": "Applies custom fonts and RTL layout support for bilingual text.",
   "permissions": ["storage", "activeTab", "tabs"],
   "icons": {
-    "16": "Images/icon128.png",
-    "48": "Images/icon128.png",
-    "128": "Images/icon128.png"
+    "16": "Images/icon16.jpg",
+    "48": "Images/icon48.jpg",
+    "128": "Images/icon128.jpg"
   },
   "action": {
     "default_popup": "popup.html"
