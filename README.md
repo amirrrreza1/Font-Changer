@@ -1,6 +1,6 @@
 # Persian Support Extension Guide
 
-This guide explains how to install your custom font-splitting extension across different browsers, how to add your own custom font files to it, how to make the extension permanent in Firefox, and how to apply it to other websites.
+This guide explains how to install the Persian Support extension, how to add your own custom font files to it, and how to manage your allowed websites to seamlessly inject beautiful typography and RTL layout controls into your favorite web apps.
 
 ## 1\. How to Install the Extension (Standard)
 

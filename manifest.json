@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Persian Support",
   "version": "1.0",
-  "description": "Applies separate local and custom fonts to English and Persian text.",
+  "description": "Applies custom fonts and RTL layout support for bilingual text.",
   "permissions": ["storage", "activeTab", "tabs"],
   "icons": {
     "16": "Images/icon128.png",
