@@ -1,5 +1,8 @@
 # Persian Support Extension Guide
 
+**Firefox users:** You can easily download and install the extension directly from the Firefox Add-ons store:
+[Download Persian Support for Firefox](https://addons.mozilla.org/en-US/firefox/addon/persian-support/)
+
 This guide explains how to install the Persian Support extension, how to add your own custom font files to it, and how to manage your allowed websites to seamlessly inject beautiful typography and RTL layout controls into your favorite web apps.
 
 ## 1\. How to Install the Extension (Standard)
@@ -21,9 +24,13 @@ Because Edge is built on the same engine as Chrome, the process is nearly identi
 3.  Click the **Load unpacked** button at the top right of the main area.
 4.  Select the folder containing your extension files.
 
-### Mozilla Firefox (Temporary Install)
+### Mozilla Firefox
 
-_Note: Temporary add-ons in Firefox are removed automatically when you restart the browser. See Section 3 for the permanent method._
+For regular users, the easiest way is to install it directly from the Firefox Add-ons store:
+[Download Persian Support for Firefox](https://addons.mozilla.org/en-US/firefox/addon/persian-support/)
+
+If you are a developer and want to load the extension locally (Temporary Install):
+_Note: Temporary add-ons in Firefox are removed automatically when you restart the browser. See Section 3 for the permanent manual method._
 
 1.  Open Firefox and navigate to about:debugging in your address bar.
 2.  Click on **This Firefox** in the left-hand menu.
